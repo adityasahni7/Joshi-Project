@@ -1,14 +1,11 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import javax.sound.sampled.Port.Info;
+
 import javax.swing.*;
 import java.awt.Color;
 
-public class Home {
+class Home extends JFrame{
     private JFrame mainFrame;
     private JLabel headerLabel;
     private JLabel statusLabel;
@@ -53,45 +50,7 @@ public class Home {
         JButton afButton = new JButton("Product");
         JButton ufButton = new JButton("Supplier Account");
         JButton dlButton = new JButton("Puchase Product");
-        fkButton.addActionListener(new ActionListener()
-        {
-            public <ItemInfo> void actionPerformed(ActionEvent e) {
-                ItemInfo ii=(ItemInfo) new Info(null, null, false);
-                ii.showButtonDemo();
-            }
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
-            }
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
-            }
-        });
-        afButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {
-                Home ef=new Home();
-                ef.showButtonDemo();
-            }
-        });
-        ufButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Home uf=new Home();
-                uf.showButtonDemo();
-
-            }
-        });
-        dlButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Home dl=new Home();
-                dl.showButtonDemo();
-            }
-        });
+        //fkButton.addActionListener(this);
         controlPanel.add(ufButton);
         controlPanel.add(afButton);
         controlPanel.add(abButton);

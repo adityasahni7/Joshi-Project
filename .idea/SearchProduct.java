@@ -3,17 +3,15 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class SearchProduct {
     private JFrame mainFrame;
     private JLabel headerLabel;
     private JLabel statusLabel;
     private JPanel controlPanel;
-    private JLabel id,pid;
-    private static int count = 0;
+    private JLabel pid;
+
     GridLayout experimentLayout = new GridLayout(0,2);
     ResultSet rs;
 

@@ -1,14 +1,9 @@
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.colorchooser.AbstractColorChooserPanel;
-import java.awt.event.*;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class Login extends JFrame{
+import java.awt.event.*;
+
+class Login extends JFrame implements ActionListener{
     JLabel idLabel;
     JLabel passLabel;
     JLabel background;
@@ -71,17 +66,23 @@ public class Login extends JFrame{
         this.submit=new JButton("Login");
         this.submit.setBounds(400,230,100,25);
         add(submit);
-        submit.addActionListener(this::submitActionPerformed);
+        submit.addActionListener(this);
     }
+    public void actionPerformed(ActionEvent e){
+        Object src = e.getSource();
+        if (id.getText().equals("admin"))
+            if (src == submit){
+                JDialog d = new JDialog(this, "Dialog box");
+                JLabel l = new JLabel("Correct password");
+                d.add(l);
+                
+                d.setSize(100, 100);
+                d.setVisible(true);
 
-    public void submitActionPerformed(java.awt.event.ActionEvent evt){
-        if(id.getText().equals("admin") && pass.getText().equals("admin")){
-            this.hide();
-            Frame2new fn=new Frame2new();
-            fn.showButtonDemo();
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Invalid password!");
+
+            } else{
+                JOptionPane.showMessageDialog(null, "Invalid password!");
+               
         }
     }
 }
